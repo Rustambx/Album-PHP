@@ -1,0 +1,30 @@
+.column {
+    float: left;
+    margin: 10px;
+}
+
+.albums {
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.phone {
+    text-align: center;
+}
+
+.more {
+    float: right;
+}
+
+.row {
+    float: left;
+}
+.error {
+    display: none;
+    color: red;
+    float: left;
+}
+
+.loadMore {
+    padding-bottom: 20px;
+}
