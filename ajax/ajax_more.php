@@ -14,9 +14,8 @@ if (!empty($_POST["id"])) {
     $query = $db->query("SELECT COUNT(*) as num_rows FROM albums WHERE id > " . $_POST['id'] . " ORDER BY id ASC");
     $resAll = $query->fetch_assoc();
     $totalRowCount = $resAll['num_rows'];
-    $showLimit = 1;
     // Получение записи из базы данных
-    $query = $db->query("SELECT * FROM albums WHERE id > " . $_POST['id'] . " ORDER BY id ASC LIMIT $showLimit");
+    $query = $db->query("SELECT * FROM albums WHERE id > " . $_POST['id'] . " ORDER BY id ASC LIMIT " . PAGER_LIMIT);
 
     if ($query->num_rows > 0) {
         while ($row = $query->fetch_assoc()) {
@@ -34,7 +33,7 @@ if (!empty($_POST["id"])) {
         "data" =>
             [
                 "items" => $arResult,
-                "showPager" => boolval($totalRowCount > $showLimit),
+                "showPager" => boolval($totalRowCount > PAGER_LIMIT),
                 "lastKey" => $lastKey
             ],
         "errors" => false

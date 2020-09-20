@@ -29,7 +29,7 @@ class DB
     {
         $res = null;
         $db = self::getConnection();
-        $sql = 'SELECT * FROM albums ORDER BY id ASC LIMIT 10';
+        $sql = 'SELECT * FROM albums ORDER BY id ASC LIMIT ' . PAGER_LIMIT;
         $res = $db->query($sql);
         return $res;
     }
