@@ -1,3 +1,5 @@
 /uploads/*
 /.idea
 /includes/env.php
+/.htaccess
+/.htpasswd
