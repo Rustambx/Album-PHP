@@ -12,7 +12,7 @@ class DB
     public static function getConnection ()
     {
         if (self::$mysqli == null) {
-            self::$mysqli = new mysqli("localhost", 'root', 'root', 'photo');
+            self::$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
             if (self::$mysqli == false) {
                 echo 'Ошибка: Невозможно подключиться к MySQL ' . self::$mysqli->connect_error;
                 return false;
